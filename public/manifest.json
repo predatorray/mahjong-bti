@@ -1,0 +1,9 @@
+{
+  "short_name": "Mahjong BTI",
+  "name": "Mahjong Behavior Type Indicator",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#7e1f1f",
+  "background_color": "#ffffff"
+}

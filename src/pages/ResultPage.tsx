@@ -1,0 +1,204 @@
+import React from 'react';
+import {
+  Box,
+  Button,
+  Chip,
+  Paper,
+  Stack,
+  Typography,
+} from '@mui/material';
+import ReplayIcon from '@mui/icons-material/Replay';
+import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom';
+import { useT } from '../i18n/useLangContext';
+import { TYPE_IMAGES } from '../assets/typeImages';
+import { ALL_TYPE_CODES, AXES, AXIS_POLES, TypeCode } from '../mbti/types';
+
+function isValidTypeCode(code: string | undefined): code is TypeCode {
+  return !!code && (ALL_TYPE_CODES as string[]).includes(code);
+}
+
+export default function ResultPage() {
+  const { typeCode } = useParams<{ typeCode: string }>();
+  const t = useT();
+  const navigate = useNavigate();
+
+  if (!isValidTypeCode(typeCode)) {
+    return (
+      <Box sx={{ textAlign: 'center', py: 6 }}>
+        <Typography variant="h5" gutterBottom>
+          Unknown type
+        </Typography>
+        <Button component={RouterLink} to="/" variant="contained">
+          {t.result_retake}
+        </Button>
+      </Box>
+    );
+  }
+
+  const typeInfo = t.types[typeCode as keyof typeof t.types];
+  const image = TYPE_IMAGES[typeCode];
+
+  const poles = typeCode.split('') as Array<typeof typeCode[number]>;
+
+  return (
+    <Box sx={{ flex: 1 }} data-testid="result-page">
+      <Stack
+        spacing={{ xs: 3, sm: 5 }}
+        sx={{ maxWidth: 760, mx: 'auto', width: '100%' }}
+      >
+        <Box textAlign="center">
+          <Typography
+            variant="overline"
+            sx={{ color: 'text.secondary', letterSpacing: '0.18em' }}
+          >
+            {t.result_title}
+          </Typography>
+          <Typography
+            variant="h2"
+            sx={{
+              mt: 1,
+              fontSize: { xs: '2rem', sm: '3rem' },
+              color: 'primary.main',
+              fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+              letterSpacing: '0.04em',
+            }}
+            data-testid="result-type-code"
+          >
+            {typeCode}
+          </Typography>
+          <Typography
+            variant="h4"
+            sx={{ mt: 1, fontSize: { xs: '1.4rem', sm: '1.75rem' } }}
+            data-testid="result-type-name"
+          >
+            {typeInfo.name}
+          </Typography>
+        </Box>
+
+        <Paper
+          elevation={0}
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+            gap: { xs: 3, sm: 4 },
+            p: { xs: 3, sm: 4 },
+            border: '1px solid',
+            borderColor: 'divider',
+            alignItems: { xs: 'center', sm: 'flex-start' },
+          }}
+        >
+          <Box
+            sx={{
+              flexShrink: 0,
+              width: { xs: '70%', sm: 240 },
+              maxWidth: 280,
+            }}
+          >
+            <Box
+              component="img"
+              src={image}
+              alt={typeInfo.name}
+              sx={{
+                width: '100%',
+                aspectRatio: '3 / 4',
+                objectFit: 'cover',
+                borderRadius: 2,
+                display: 'block',
+              }}
+              data-testid="result-type-image"
+            />
+          </Box>
+          <Stack spacing={2} sx={{ flex: 1 }}>
+            <Typography
+              variant="h6"
+              sx={{ fontStyle: 'italic', color: 'text.secondary' }}
+            >
+              "{typeInfo.tagline}"
+            </Typography>
+            <Typography variant="body1" sx={{ lineHeight: 1.7 }}>
+              {typeInfo.description}
+            </Typography>
+          </Stack>
+        </Paper>
+
+        <Box>
+          <Typography
+            variant="subtitle1"
+            sx={{ mb: 1.5, fontWeight: 600 }}
+          >
+            {t.result_axes_heading}
+          </Typography>
+          <Stack spacing={1.5}>
+            {AXES.map((axis, i) => {
+              const pole = poles[i];
+              const [first, second] = AXIS_POLES[axis];
+              const axisLabel = (t as unknown as Record<string, string>)[`axis_${axis}`];
+              const poleLabel = (t as unknown as Record<string, string>)[`pole_${pole}`];
+              return (
+                <Stack
+                  key={axis}
+                  direction="row"
+                  alignItems="center"
+                  spacing={2}
+                  sx={{
+                    p: 1.5,
+                    border: '1px solid',
+                    borderColor: 'divider',
+                    borderRadius: 2,
+                    flexWrap: 'wrap',
+                  }}
+                  data-testid={`result-axis-${axis}`}
+                >
+                  <Typography
+                    sx={{
+                      fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+                      fontWeight: 700,
+                      minWidth: 28,
+                    }}
+                  >
+                    {pole}
+                  </Typography>
+                  <Typography variant="body2" sx={{ flex: 1, color: 'text.secondary' }}>
+                    {axisLabel}
+                  </Typography>
+                  <Chip
+                    label={poleLabel}
+                    size="small"
+                    color={pole === first ? 'primary' : 'secondary'}
+                    variant={pole === first ? 'filled' : 'outlined'}
+                    sx={{ fontWeight: 600 }}
+                  />
+                  <Box
+                    component="span"
+                    sx={{ color: 'text.disabled', fontSize: '0.75rem' }}
+                  >
+                    {first} / {second}
+                  </Box>
+                </Stack>
+              );
+            })}
+          </Stack>
+        </Box>
+
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          spacing={2}
+          justifyContent="center"
+          sx={{ pt: 2 }}
+        >
+          <Button
+            onClick={() => navigate('/test')}
+            variant="contained"
+            startIcon={<ReplayIcon />}
+            data-testid="result-retake-button"
+          >
+            {t.result_retake}
+          </Button>
+          <Button component={RouterLink} to="/" variant="outlined" color="inherit">
+            {t.app_title}
+          </Button>
+        </Stack>
+      </Stack>
+    </Box>
+  );
+}
