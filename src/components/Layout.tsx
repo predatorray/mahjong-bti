@@ -28,6 +28,9 @@ export default function Layout({ children }: LayoutProps) {
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
+        '@supports (min-height: 100dvh)': {
+          minHeight: '100dvh',
+        },
         bgcolor: 'background.default',
       }}
     >
