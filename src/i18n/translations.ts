@@ -5,11 +5,15 @@ import {
 } from './translations.type';
 import en from './locales/en';
 import zh from './locales/zh';
+import ja from './locales/ja';
+import fr from './locales/fr';
 import { getLanguagePreference } from './LocalLanguagePreference';
 
 const TranslationsPerLang: Record<SupportedLanguages, Translations> = {
   en,
   zh,
+  ja,
+  fr,
 };
 
 export function detectDefaultLocale(): SupportedLanguages {

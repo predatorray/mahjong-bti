@@ -1,30 +1,27 @@
 import en from './locales/en';
 import zh from './locales/zh';
+import ja from './locales/ja';
+import fr from './locales/fr';
 import { ALL_TYPE_CODES } from '../mbti/types';
 import { QUESTIONS } from '../mbti/questions';
 
+const LOCALES = { en, zh, ja, fr };
+
 describe('translations', () => {
-  test('all 16 types are translated in both locales', () => {
+  test.each(Object.entries(LOCALES))('all 16 types are translated in %s', (_name, locale) => {
     for (const code of ALL_TYPE_CODES) {
-      expect(en.types[code]).toBeDefined();
-      expect(en.types[code].name).toBeTruthy();
-      expect(en.types[code].description).toBeTruthy();
-      expect(zh.types[code]).toBeDefined();
-      expect(zh.types[code].name).toBeTruthy();
-      expect(zh.types[code].description).toBeTruthy();
+      expect(locale.types[code]).toBeDefined();
+      expect(locale.types[code].name).toBeTruthy();
+      expect(locale.types[code].description).toBeTruthy();
     }
   });
 
-  test('all questions are translated in both locales with two options', () => {
+  test.each(Object.entries(LOCALES))('all questions are translated in %s with two options', (_name, locale) => {
     for (const q of QUESTIONS) {
-      const enQ = (en.questions as any)[q.id];
-      const zhQ = (zh.questions as any)[q.id];
-      expect(enQ).toBeDefined();
-      expect(enQ.question).toBeTruthy();
-      expect(enQ.options).toHaveLength(2);
-      expect(zhQ).toBeDefined();
-      expect(zhQ.question).toBeTruthy();
-      expect(zhQ.options).toHaveLength(2);
+      const qt = (locale.questions as any)[q.id];
+      expect(qt).toBeDefined();
+      expect(qt.question).toBeTruthy();
+      expect(qt.options).toHaveLength(2);
     }
   });
 });
