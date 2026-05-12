@@ -89,14 +89,14 @@ const en = {
       ],
     },
     q4: {
-      question: 'You can either complete a quick cheap hand now, or break shape for a chance at a big yaku. You:',
+      question: 'You can either complete a quick cheap hand now, or break shape for a chance at a much bigger hand. You:',
       options: [
         'Break shape — a big win is worth the wait.',
         'Take the win. Any win is a win.',
       ],
     },
     q5: {
-      question: 'You see a juicy dora indicator. You:',
+      question: 'You draw a tile that could anchor a much bigger hand. You:',
       options: [
         'Build around it. This hand should be huge.',
         'Note it and keep playing efficiently.',
@@ -105,7 +105,7 @@ const en = {
     q6: {
       question: 'Your dream hand at Mahjong is:',
       options: [
-        'A satisfying, photo-worthy big yaku.',
+        'A satisfying, photo-worthy big hand.',
         'Twenty small wins in one night.',
       ],
     },

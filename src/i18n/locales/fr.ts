@@ -98,7 +98,7 @@ const fr: Translations = {
       ],
     },
     q5: {
-      question: 'Vous repérez une tuile bonus tentante. Vous :',
+      question: 'Vous tirez une tuile qui pourrait porter une bien plus grosse main. Vous :',
       options: [
         'Vous construisez autour. Cette main doit être énorme.',
         'Vous la notez et continuez à jouer efficacement.',
