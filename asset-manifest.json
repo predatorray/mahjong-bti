@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/mahjong-bti/static/css/main.b1d37c54.css",
+    "main.js": "/mahjong-bti/static/js/main.603625ac.js",
+    "static/media/DSFT.png": "/mahjong-bti/static/media/DSFT.bc69d73c491ad2345144.png",
+    "static/media/DBCW.png": "/mahjong-bti/static/media/DBCW.60f46a47c47e1a3761fc.png",
+    "static/media/ABFW.png": "/mahjong-bti/static/media/ABFW.bbabbae7acbcad0a6c31.png",
+    "static/media/ASFT.png": "/mahjong-bti/static/media/ASFT.596f9a1440f6bebe2902.png",
+    "static/media/DSFW.png": "/mahjong-bti/static/media/DSFW.664040f5fb584125c136.png",
+    "static/media/ABCW.png": "/mahjong-bti/static/media/ABCW.1f385a0fb8adfcbd27fe.png",
+    "static/media/ASCT.png": "/mahjong-bti/static/media/ASCT.fd03fbdd6d10cf53b00a.png",
+    "static/media/DBFW.png": "/mahjong-bti/static/media/DBFW.322c9a4577a05c98b4e9.png",
+    "static/media/DSCW.png": "/mahjong-bti/static/media/DSCW.464ce55cd3ecac914f9e.png",
+    "static/media/DSCT.png": "/mahjong-bti/static/media/DSCT.1dd79f352fce340bc19f.png",
+    "static/media/ABFT.png": "/mahjong-bti/static/media/ABFT.a652d5e41de5a4efd056.png",
+    "static/media/ASCW.png": "/mahjong-bti/static/media/ASCW.bdb773ce186f8e2a0d29.png",
+    "static/media/ABCT.png": "/mahjong-bti/static/media/ABCT.fd9c65293e706bc4b91b.png",
+    "static/media/ASFW.png": "/mahjong-bti/static/media/ASFW.29bc5749349cbd2915ec.png",
+    "static/media/DBCT.png": "/mahjong-bti/static/media/DBCT.91af5cabdfb81b6371b9.png",
+    "static/media/DBFT.png": "/mahjong-bti/static/media/DBFT.a3db0825c433eb480781.png",
+    "index.html": "/mahjong-bti/index.html",
+    "main.b1d37c54.css.map": "/mahjong-bti/static/css/main.b1d37c54.css.map",
+    "main.603625ac.js.map": "/mahjong-bti/static/js/main.603625ac.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b1d37c54.css",
+    "static/js/main.603625ac.js"
+  ]
+}
