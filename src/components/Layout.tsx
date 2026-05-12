@@ -1,8 +1,18 @@
-import React, { ReactNode } from 'react';
-import { AppBar, Box, Container, Toolbar, Typography } from '@mui/material';
+import React, { ReactNode, useState } from 'react';
+import {
+  AppBar,
+  Box,
+  Container,
+  IconButton,
+  Toolbar,
+  Tooltip,
+  Typography,
+} from '@mui/material';
+import ShareIcon from '@mui/icons-material/Share';
 import { Link as RouterLink } from 'react-router-dom';
 import LanguageMenu from '../i18n/LanguageMenu';
 import { useT } from '../i18n/useLangContext';
+import ShareDialog from './ShareDialog';
 
 interface LayoutProps {
   children: ReactNode;
@@ -10,6 +20,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const t = useT();
+  const [shareOpen, setShareOpen] = useState(false);
 
   return (
     <Box
@@ -45,9 +56,22 @@ export default function Layout({ children }: LayoutProps) {
           >
             {t.app_title}
           </Typography>
+          <Tooltip title={t.share_button}>
+            <IconButton
+              onClick={() => setShareOpen(true)}
+              aria-label={t.share_button}
+              color="inherit"
+              size="small"
+              data-testid="header-share-button"
+              sx={{ mr: 0.5 }}
+            >
+              <ShareIcon fontSize="small" />
+            </IconButton>
+          </Tooltip>
           <LanguageMenu />
         </Toolbar>
       </AppBar>
+      <ShareDialog open={shareOpen} onClose={() => setShareOpen(false)} />
       <Container
         maxWidth="md"
         sx={{

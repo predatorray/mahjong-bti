@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Button,
@@ -8,10 +8,12 @@ import {
   Typography,
 } from '@mui/material';
 import ReplayIcon from '@mui/icons-material/Replay';
+import ShareIcon from '@mui/icons-material/Share';
 import { Link as RouterLink, useNavigate, useParams } from 'react-router-dom';
 import { useT } from '../i18n/useLangContext';
 import { TYPE_IMAGES } from '../assets/typeImages';
 import { ALL_TYPE_CODES, AXES, AXIS_POLES, TypeCode } from '../mbti/types';
+import ShareDialog from '../components/ShareDialog';
 
 function isValidTypeCode(code: string | undefined): code is TypeCode {
   return !!code && (ALL_TYPE_CODES as string[]).includes(code);
@@ -21,6 +23,7 @@ export default function ResultPage() {
   const { typeCode } = useParams<{ typeCode: string }>();
   const t = useT();
   const navigate = useNavigate();
+  const [shareOpen, setShareOpen] = useState(false);
 
   if (!isValidTypeCode(typeCode)) {
     return (
@@ -194,11 +197,18 @@ export default function ResultPage() {
           >
             {t.result_retake}
           </Button>
-          <Button component={RouterLink} to="/" variant="outlined" color="inherit">
-            {t.app_title}
+          <Button
+            onClick={() => setShareOpen(true)}
+            variant="outlined"
+            color="inherit"
+            startIcon={<ShareIcon />}
+            data-testid="result-share-button"
+          >
+            {t.result_share}
           </Button>
         </Stack>
       </Stack>
+      <ShareDialog open={shareOpen} onClose={() => setShareOpen(false)} />
     </Box>
   );
 }

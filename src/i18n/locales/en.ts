@@ -20,6 +20,14 @@ const en = {
   result_share: 'Share',
   result_share_text: (code: string, name: string) =>
     `I'm ${code} — ${name}. What's your Mahjong personality?`,
+
+  share_button: 'Share',
+  share_title: 'Share Mahjong BTI',
+  share_link_label: 'Link',
+  share_copy: 'Copy link',
+  share_copied: 'Copied!',
+  share_close: 'Close',
+  share_scan_hint: 'Or scan the QR code',
   result_axes_heading: 'Your dimensions',
 
   axis_AD: 'Aggressive — Defensive',

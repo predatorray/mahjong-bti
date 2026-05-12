@@ -65,3 +65,24 @@ test('retake from the result returns to the wizard', async ({ page }) => {
   await page.getByTestId('result-retake-button').click();
   await expect(page.getByTestId('wizard-progress-text')).toContainText('1');
 });
+
+test('header share button opens dialog showing the home URL (not the current page)', async ({ page }) => {
+  await page.goto('/?lang=en#/result/ABCT');
+  await page.getByTestId('header-share-button').click();
+  const dialog = page.getByTestId('share-dialog');
+  await expect(dialog).toBeVisible();
+  const linkField = dialog.getByTestId('share-link-field').locator('input');
+  const url = await linkField.inputValue();
+  // Must be the bare home URL — no hash route, no query.
+  expect(url).not.toContain('#');
+  expect(url).not.toContain('?');
+  expect(url).toMatch(/^https?:\/\//);
+  await expect(dialog.getByTestId('share-qrcode')).toBeVisible();
+});
+
+test('result page share button opens the same dialog', async ({ page }) => {
+  await page.goto('/?lang=en#/result/DSFW');
+  await page.getByTestId('result-share-button').click();
+  await expect(page.getByTestId('share-dialog')).toBeVisible();
+  await expect(page.getByTestId('share-qrcode')).toBeVisible();
+});

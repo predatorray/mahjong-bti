@@ -24,6 +24,14 @@ const zh: Translations = {
     `我是 ${code} —— ${name}。你的麻将人格是?`,
   result_axes_heading: '你的四个维度',
 
+  share_button: '分享',
+  share_title: '分享 Mahjong BTI',
+  share_link_label: '链接',
+  share_copy: '复制链接',
+  share_copied: '已复制！',
+  share_close: '关闭',
+  share_scan_hint: '或扫描二维码',
+
   axis_AD: '进攻 — 防守',
   axis_BS: '大牌 — 小胡',
   axis_CF: '理性 — 玄学',
