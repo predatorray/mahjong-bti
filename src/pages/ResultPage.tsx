@@ -135,48 +135,78 @@ export default function ResultPage() {
             {AXES.map((axis, i) => {
               const pole = poles[i];
               const [first, second] = AXIS_POLES[axis];
-              const axisLabel = (t as unknown as Record<string, string>)[`axis_${axis}`];
-              const poleLabel = (t as unknown as Record<string, string>)[`pole_${pole}`];
+              const tx = t as unknown as Record<string, string>;
+              const axisLabel = tx[`axis_${axis}`];
+              const axisTagline = tx[`axis_${axis}_tagline`];
+              const poleLabel = tx[`pole_${pole}`];
+              const poleDescription = tx[`pole_${pole}_description`];
               return (
                 <Stack
                   key={axis}
-                  direction="row"
-                  alignItems="center"
-                  spacing={2}
+                  spacing={1.25}
                   sx={{
-                    p: 1.5,
+                    p: { xs: 2, sm: 2.5 },
                     border: '1px solid',
                     borderColor: 'divider',
                     borderRadius: 2,
-                    flexWrap: 'wrap',
                   }}
                   data-testid={`result-axis-${axis}`}
                 >
+                  <Stack
+                    direction="row"
+                    alignItems="center"
+                    spacing={1.5}
+                    sx={{ flexWrap: 'wrap', rowGap: 1 }}
+                  >
+                    <Typography
+                      sx={{
+                        fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
+                        fontWeight: 700,
+                        fontSize: '1.1rem',
+                        minWidth: 28,
+                      }}
+                    >
+                      {pole}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{ flex: 1, color: 'text.secondary', fontWeight: 600 }}
+                    >
+                      {axisLabel}
+                    </Typography>
+                    <Chip
+                      label={poleLabel}
+                      size="small"
+                      color={pole === first ? 'primary' : 'secondary'}
+                      variant={pole === first ? 'filled' : 'outlined'}
+                      sx={{ fontWeight: 600 }}
+                    />
+                    <Box
+                      component="span"
+                      sx={{ color: 'text.disabled', fontSize: '0.75rem' }}
+                    >
+                      {first} / {second}
+                    </Box>
+                  </Stack>
                   <Typography
+                    variant="body2"
                     sx={{
-                      fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
-                      fontWeight: 700,
-                      minWidth: 28,
+                      color: 'text.secondary',
+                      fontStyle: 'italic',
+                      pl: { xs: 0, sm: 5 },
                     }}
                   >
-                    {pole}
+                    {axisTagline}
                   </Typography>
-                  <Typography variant="body2" sx={{ flex: 1, color: 'text.secondary' }}>
-                    {axisLabel}
-                  </Typography>
-                  <Chip
-                    label={poleLabel}
-                    size="small"
-                    color={pole === first ? 'primary' : 'secondary'}
-                    variant={pole === first ? 'filled' : 'outlined'}
-                    sx={{ fontWeight: 600 }}
-                  />
-                  <Box
-                    component="span"
-                    sx={{ color: 'text.disabled', fontSize: '0.75rem' }}
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      lineHeight: 1.7,
+                      pl: { xs: 0, sm: 5 },
+                    }}
                   >
-                    {first} / {second}
-                  </Box>
+                    {poleDescription}
+                  </Typography>
                 </Stack>
               );
             })}

@@ -35,6 +35,11 @@ const en = {
   axis_CF: 'Calculated — Feel',
   axis_TW: 'Tight — Wild',
 
+  axis_AD_tagline: 'When the heat is on, do you press forward or pull back?',
+  axis_BS_tagline: 'One fireworks finale, or twenty quiet little wins?',
+  axis_CF_tagline: 'Do the numbers run the show, or does your gut get the final say?',
+  axis_TW_tagline: 'Stick to the plan, or roll with whatever the table throws at you?',
+
   pole_A: 'Aggressive',
   pole_D: 'Defensive',
   pole_B: 'Big hands',
@@ -43,6 +48,23 @@ const en = {
   pole_F: 'Feel',
   pole_T: 'Tight',
   pole_W: 'Wild',
+
+  pole_A_description:
+    'You hear the shuffle, you smell blood. Tiles in your hand are ammunition, not souvenirs, and you spend them like a player who genuinely believes the next win is yours. Patience is for people who do not trust their own hand.',
+  pole_D_description:
+    'You would rather win nothing than lose everything. You read the discard pile like tea leaves, fold a half-built dream without flinching, and let your opponents collide with each other while you sit quietly behind your wall — chips intact, ego intact, sleep schedule intact.',
+  pole_B_description:
+    'A cheap win bores you. You will break a perfectly working hand to chase the one your friends will still be talking about at breakfast. If you are going to win, it had better be worth a photo — and possibly a small acceptance speech.',
+  pole_S_description:
+    'Win small, win often, win again. You do not need confetti or fireworks — you need a steady drip of cleared hands and a tidy little pile of chips. Every win counts the same on the scoresheet, so why work overtime when the assembly line is humming?',
+  pole_C_description:
+    'Discards are data, waits are probabilities, and the table is a live spreadsheet you happen to be solving. You do not believe in luck; you believe in the long run, and the long run, on average, loves you back. Variance is just weather.',
+  pole_F_description:
+    'Some tiles feel friendly, some feel cursed, and you have stopped pretending otherwise. You move on hunches, vibes, and a quiet sense of "not that one" — and somehow the universe keeps backing you up. Skeptics are welcome to count tiles; you will keep winning.',
+  pole_T_description:
+    'You pick a plan and you marry it. No FOMO calls, no mood-based discards, no 1AM hero plays. Discipline is unsexy until you tally the chips at the end of the night — and then, very quietly, it is the sexiest thing at the table.',
+  pole_W_description:
+    'Plans are suggestions, not prison bars. You ride momentum, flip styles between hands, and let the table\'s energy steer the wheel. Predictable players have nothing on you — including, occasionally, yourself, which is half the fun.',
 
   questions: {
     q1: {
