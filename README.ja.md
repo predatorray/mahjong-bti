@@ -8,7 +8,7 @@
 React + MUI で作られたシングルページアプリで、GitHub Pages 上でのホスティングを想定しています。
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/predatorray/mahjong-bti/assets/screenshot-result.png" alt="結果ページのスクリーンショット" width="460" />
+  <img src="https://raw.githubusercontent.com/predatorray/mahjong-bti/assets/screenshot-result-ja.png" alt="結果ページのスクリーンショット" width="460" />
 </p>
 
 ## 技術スタック

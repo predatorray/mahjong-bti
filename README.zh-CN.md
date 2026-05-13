@@ -8,7 +8,7 @@
 基于 React + MUI 的单页应用，部署在 GitHub Pages 上。
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/predatorray/mahjong-bti/assets/screenshot-result.png" alt="结果页截图" width="460" />
+  <img src="https://raw.githubusercontent.com/predatorray/mahjong-bti/assets/screenshot-result-zh.png" alt="结果页截图" width="460" />
 </p>
 
 ## 技术栈
