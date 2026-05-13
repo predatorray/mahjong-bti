@@ -39,6 +39,9 @@ const ko: Translations = {
   share_close: '닫기',
   share_scan_hint: '또는 QR 코드를 스캔하세요',
 
+  footer_author: '제작자',
+  footer_source: '소스',
+
   axis_AD: '공격 — 수비',
   axis_BS: '큰 손 — 작은 손',
   axis_CF: '계산 — 직감',

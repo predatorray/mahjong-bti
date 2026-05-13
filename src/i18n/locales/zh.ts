@@ -39,6 +39,9 @@ const zh: Translations = {
   share_close: '关闭',
   share_scan_hint: '或扫描二维码',
 
+  footer_author: '作者',
+  footer_source: '源码',
+
   axis_AD: '进攻 — 防守',
   axis_BS: '大牌 — 小胡',
   axis_CF: '理性 — 玄学',

@@ -35,6 +35,9 @@ const en = {
   share_copied: 'Copied!',
   share_close: 'Close',
   share_scan_hint: 'Or scan the QR code',
+
+  footer_author: 'AUTHOR',
+  footer_source: 'SOURCE',
   result_axes_heading: 'Your dimensions',
 
   axis_AD: 'Aggressive — Defensive',

@@ -14,6 +14,7 @@ import { useT } from '../i18n/useLangContext';
 import { TYPE_IMAGES } from '../assets/typeImages';
 import { ALL_TYPE_CODES, AXES, AXIS_POLES, TypeCode } from '../mbti/types';
 import ShareDialog from '../components/ShareDialog';
+import Footer from '../components/Footer';
 
 function isValidTypeCode(code: string | undefined): code is TypeCode {
   return !!code && (ALL_TYPE_CODES as string[]).includes(code);
@@ -239,6 +240,7 @@ export default function ResultPage() {
         </Stack>
       </Stack>
       <ShareDialog open={shareOpen} onClose={() => setShareOpen(false)} />
+      <Footer />
     </Box>
   );
 }

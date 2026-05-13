@@ -39,6 +39,9 @@ const fr: Translations = {
   share_close: 'Fermer',
   share_scan_hint: 'Ou scannez le QR code',
 
+  footer_author: 'AUTEUR',
+  footer_source: 'SOURCE',
+
   axis_AD: 'Agressif — Défensif',
   axis_BS: 'Grandes mains — Petites mains',
   axis_CF: 'Calculé — Intuition',

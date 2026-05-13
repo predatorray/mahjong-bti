@@ -39,6 +39,9 @@ const ja: Translations = {
   share_close: '閉じる',
   share_scan_hint: 'またはQRコードを読み取る',
 
+  footer_author: '作者',
+  footer_source: 'ソース',
+
   axis_AD: '攻撃 — 守備',
   axis_BS: '大物手 — 安手',
   axis_CF: '理詰め — 感覚',

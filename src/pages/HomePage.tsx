@@ -2,11 +2,13 @@ import React from 'react';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import { useT } from '../i18n/useLangContext';
+import Footer from '../components/Footer';
 
 export default function HomePage() {
   const t = useT();
 
   return (
+    <>
     <Box
       sx={{
         flex: 1,
@@ -60,5 +62,7 @@ export default function HomePage() {
         </Typography>
       </Stack>
     </Box>
+    <Footer />
+    </>
   );
 }
