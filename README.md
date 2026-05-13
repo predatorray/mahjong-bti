@@ -6,6 +6,10 @@ Twelve quick questions reveal which kind of player you are at the table.
 Built as a React + MUI single-page application, designed to be hosted on GitHub
 Pages.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/predatorray/mahjong-bti/assets/screenshot-result.png" alt="Result page screenshot" width="460" />
+</p>
+
 ## Stack
 
 - React 19 + TypeScript (Create React App)
@@ -49,34 +53,3 @@ npm run deploy
 ```
 
 This builds and publishes the bundle to the `gh-pages` branch.
-
-## Project layout
-
-```
-src/
-  App.tsx                  routes (Hash router) + theme + lang provider
-  theme.ts                 MUI theme (minimal red/green palette)
-  index.tsx, index.css     entry point + global styles
-  assets/
-    types/*.png            16 portrait images
-    typeImages.ts          import map: TypeCode → image asset
-  components/Layout.tsx    AppBar + container
-  i18n/
-    locales/en.ts          English copy
-    locales/zh.ts          Chinese copy
-    translations.ts        locale detection + dispatch
-    translations.type.ts   schema-derived Translations type
-    useLangContext.ts      LangContext + useT() hook
-    LanguageMenu.tsx       header language switcher
-    LocalLanguagePreference.ts
-  mbti/
-    types.ts               TypeCode, Axis, Pole, Question types
-    questions.ts           12 questions (axis + pole metadata)
-    scoring.ts             scoreAnswers, isComplete
-    scoring.test.ts
-  pages/
-    HomePage.tsx
-    WizardPage.tsx         one question per page, prev/next, gating
-    ResultPage.tsx         portrait, name, description, axis breakdown
-e2e/flow.spec.ts           Playwright end-to-end tests
-```
