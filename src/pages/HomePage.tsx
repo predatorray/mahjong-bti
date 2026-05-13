@@ -9,6 +9,10 @@ export default function HomePage() {
 
   return (
     <>
+    <title>{`${t.app_title} — ${t.app_subtitle}`}</title>
+    <meta name="description" content={t.app_description} />
+    <meta property="og:title" content={`${t.app_title} — ${t.app_subtitle}`} />
+    <meta property="og:description" content={t.app_description} />
     <Box
       sx={{
         flex: 1,

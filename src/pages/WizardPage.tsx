@@ -52,6 +52,8 @@ export default function WizardPage() {
 
   return (
     <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <title>{`${t.home_cta_start} — ${t.app_title}`}</title>
+      <meta name="description" content={t.app_description} />
       <Stack spacing={1} sx={{ mb: { xs: 3, sm: 4 } }}>
         <Stack direction="row" justifyContent="space-between" alignItems="baseline">
           <Typography variant="body2" sx={{ color: 'text.secondary' }} data-testid="wizard-progress-text">

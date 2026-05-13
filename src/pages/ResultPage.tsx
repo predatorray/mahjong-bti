@@ -44,8 +44,15 @@ export default function ResultPage() {
 
   const poles = typeCode.split('') as Array<typeof typeCode[number]>;
 
+  const pageTitle = `${typeInfo.name} (${typeCode}) — ${t.app_title}`;
+  const pageDescription = `${typeInfo.tagline} ${typeInfo.description}`;
+
   return (
     <Box sx={{ flex: 1 }} data-testid="result-page">
+      <title>{pageTitle}</title>
+      <meta name="description" content={pageDescription} />
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={pageDescription} />
       <Stack
         spacing={{ xs: 3, sm: 5 }}
         sx={{ maxWidth: 760, mx: 'auto', width: '100%' }}

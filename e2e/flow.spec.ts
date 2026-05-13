@@ -60,14 +60,14 @@ test('language switcher updates UI to Chinese', async ({ page }) => {
 
 test('retake from the result returns to the wizard', async ({ page }) => {
   // Jump straight to a known result via the URL
-  await page.goto('/?lang=en#/result/ABCT');
+  await page.goto('/result/ABCT?lang=en');
   await expect(page.getByTestId('result-type-code')).toHaveText('ABCT');
   await page.getByTestId('result-retake-button').click();
   await expect(page.getByTestId('wizard-progress-text')).toContainText('1');
 });
 
 test('header share button opens dialog showing the home URL (not the current page)', async ({ page }) => {
-  await page.goto('/?lang=en#/result/ABCT');
+  await page.goto('/result/ABCT?lang=en');
   await page.getByTestId('header-share-button').click();
   const dialog = page.getByTestId('share-dialog');
   await expect(dialog).toBeVisible();
@@ -81,7 +81,7 @@ test('header share button opens dialog showing the home URL (not the current pag
 });
 
 test('result page share button opens the same dialog', async ({ page }) => {
-  await page.goto('/?lang=en#/result/DSFW');
+  await page.goto('/result/DSFW?lang=en');
   await page.getByTestId('result-share-button').click();
   await expect(page.getByTestId('share-dialog')).toBeVisible();
   await expect(page.getByTestId('share-qrcode')).toBeVisible();

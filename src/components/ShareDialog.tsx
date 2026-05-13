@@ -33,9 +33,9 @@ interface ShareDialogProps {
 
 function getHomeUrl(): string {
   if (typeof window === 'undefined') return '';
-  // HashRouter puts route state in the fragment; the home page is just the
-  // base document URL with no hash, no query.
-  return window.location.origin + window.location.pathname;
+  const base = process.env.PUBLIC_URL || '/';
+  const trimmed = base.endsWith('/') ? base : `${base}/`;
+  return window.location.origin + trimmed;
 }
 
 interface ShareTarget {

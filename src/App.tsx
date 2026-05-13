@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from './theme';
 import { LangContext } from './i18n/useLangContext';
@@ -19,7 +19,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <LangContext.Provider value={langContextValue}>
-        <HashRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Layout>
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -29,7 +29,7 @@ export default function App() {
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Layout>
-        </HashRouter>
+        </BrowserRouter>
       </LangContext.Provider>
     </ThemeProvider>
   );
