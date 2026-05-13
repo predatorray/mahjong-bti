@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mahjong-bti/static/css/main.b1d37c54.css",
-    "main.js": "/mahjong-bti/static/js/main.ca279f52.js",
+    "main.js": "/mahjong-bti/static/js/main.a848ca23.js",
     "static/media/DSFT.jpg": "/mahjong-bti/static/media/DSFT.03916bcf8c683fe0f95f.jpg",
     "static/media/DBCW.jpg": "/mahjong-bti/static/media/DBCW.808bc5deeab30d37d411.jpg",
     "static/media/ASFT.jpg": "/mahjong-bti/static/media/ASFT.84482cef944087ec613e.jpg",
@@ -20,10 +20,10 @@
     "static/media/DBCT.jpg": "/mahjong-bti/static/media/DBCT.7f634f9abbdc526b3b23.jpg",
     "index.html": "/mahjong-bti/index.html",
     "main.b1d37c54.css.map": "/mahjong-bti/static/css/main.b1d37c54.css.map",
-    "main.ca279f52.js.map": "/mahjong-bti/static/js/main.ca279f52.js.map"
+    "main.a848ca23.js.map": "/mahjong-bti/static/js/main.a848ca23.js.map"
   },
   "entrypoints": [
     "static/css/main.b1d37c54.css",
-    "static/js/main.ca279f52.js"
+    "static/js/main.a848ca23.js"
   ]
 }
