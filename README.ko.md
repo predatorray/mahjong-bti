@@ -5,6 +5,8 @@
 **Mahjong Behavior Type Indicator (마작 행동 유형 지표)** —— 마작 플레이어를 위한 16가지 성격 진단.
 12개의 빠른 질문으로 탁자 위 당신이 어떤 플레이어인지 알려드립니다.
 
+👉 **온라인에서 해보기: <https://www.predatorray.me/mahjong-bti/>**
+
 React + MUI로 만든 싱글 페이지 앱이며, GitHub Pages에 호스팅되도록 설계되었습니다.
 
 <p align="center">

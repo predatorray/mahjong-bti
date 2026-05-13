@@ -5,6 +5,8 @@
 **Mahjong Behavior Type Indicator（麻雀行動タイプ指標）** —— 麻雀プレイヤー向けの 16 タイプ性格診断。
 12 問のクイック診断で、卓上でのあなたのプレイヤータイプが分かります。
 
+👉 **オンラインで試す: <https://www.predatorray.me/mahjong-bti/>**
+
 React + MUI で作られたシングルページアプリで、GitHub Pages 上でのホスティングを想定しています。
 
 <p align="center">

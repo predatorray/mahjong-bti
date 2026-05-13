@@ -5,6 +5,8 @@
 **Mahjong Behavior Type Indicator** — a 16-personality test for Mahjong players.
 Twelve quick questions reveal which kind of player you are at the table.
 
+👉 **Try it online: <https://www.predatorray.me/mahjong-bti/>**
+
 Built as a React + MUI single-page application, designed to be hosted on GitHub
 Pages.
 

@@ -5,6 +5,8 @@
 **麻将行为类型指标（Mahjong Behavior Type Indicator）** —— 面向麻将玩家的 16 型人格测试。
 十二道快问快答，告诉你在牌桌上是哪一种玩家。
 
+👉 **在线体验： <https://www.predatorray.me/mahjong-bti/>**
+
 基于 React + MUI 的单页应用，部署在 GitHub Pages 上。
 
 <p align="center">
