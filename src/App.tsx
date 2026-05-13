@@ -8,6 +8,7 @@ import { SupportedLanguages } from './i18n/translations.type';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import WizardPage from './pages/WizardPage';
+import LoadingPage from './pages/LoadingPage';
 import ResultPage from './pages/ResultPage';
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/test" element={<WizardPage />} />
+              <Route path="/loading/:typeCode" element={<LoadingPage />} />
               <Route path="/result/:typeCode" element={<ResultPage />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>

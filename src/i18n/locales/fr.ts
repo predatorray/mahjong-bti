@@ -16,6 +16,13 @@ const fr: Translations = {
   wizard_finish: 'Voir mon type',
   wizard_pick_hint: 'Choisissez la réponse qui vous ressemble le plus',
 
+  loading_messages: [
+    'Analyse de vos réponses…',
+    'Lecture des défausses…',
+    'Comptage des tuiles…',
+    'Détermination de votre archétype…',
+  ],
+
   result_title: 'Vous êtes',
   result_subtitle: 'Votre personnalité Mahjong',
   result_retake: 'Refaire le test',

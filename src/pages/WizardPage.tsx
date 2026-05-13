@@ -44,7 +44,7 @@ export default function WizardPage() {
     if (selected === undefined) return;
     if (isLast) {
       const code = scoreAnswers({ ...answers, [question.id]: selected });
-      navigate(`/result/${code}`);
+      navigate(`/loading/${code}`);
     } else {
       setIndex(index + 1);
     }

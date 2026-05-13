@@ -16,6 +16,13 @@ const zh: Translations = {
   wizard_finish: '查看我的类型',
   wizard_pick_hint: '选一个最像你的答案',
 
+  loading_messages: [
+    '正在分析你的答案……',
+    '正在解读牌河……',
+    '正在数牌……',
+    '正在确定你的牌桌人格……',
+  ],
+
   result_title: '你是',
   result_subtitle: '你的麻将人格',
   result_retake: '重新测试',

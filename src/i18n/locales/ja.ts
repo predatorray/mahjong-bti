@@ -16,6 +16,13 @@ const ja: Translations = {
   wizard_finish: '結果を見る',
   wizard_pick_hint: '自分に一番近いものを選んでください',
 
+  loading_messages: [
+    'あなたの回答を分析しています…',
+    '捨て牌を読み解いています…',
+    '牌を数えています…',
+    'あなたのタイプを確定しています…',
+  ],
+
   result_title: 'あなたは',
   result_subtitle: 'あなたの麻雀人格',
   result_retake: 'もう一度診断する',

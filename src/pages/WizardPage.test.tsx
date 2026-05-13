@@ -12,7 +12,7 @@ function renderWizard(initialPath = '/test') {
       <MemoryRouter initialEntries={[initialPath]}>
         <Routes>
           <Route path="/test" element={<WizardPage />} />
-          <Route path="/result/:typeCode" element={<div data-testid="result-stub" />} />
+          <Route path="/loading/:typeCode" element={<div data-testid="result-stub" />} />
         </Routes>
       </MemoryRouter>
     </LangContext.Provider>,

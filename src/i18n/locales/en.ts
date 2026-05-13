@@ -14,6 +14,13 @@ const en = {
   wizard_finish: 'See My Type',
   wizard_pick_hint: 'Pick the option that feels most like you',
 
+  loading_messages: [
+    'Analyzing your answers...',
+    'Reading the discards...',
+    'Counting the tiles...',
+    'Finalizing your archetype...',
+  ],
+
   result_title: 'You are',
   result_subtitle: 'Your Mahjong personality',
   result_retake: 'Retake the Test',
