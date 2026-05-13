@@ -38,6 +38,11 @@ const ja: Translations = {
   share_copied: 'コピーしました！',
   share_close: '閉じる',
   share_scan_hint: 'またはQRコードを読み取る',
+  share_via: 'シェア先',
+  share_native: 'シェア…',
+  share_default_text:
+    'Mahjong BTI — 12問であなたの麻雀パーソナリティを診断。',
+  share_on: (network: string) => `${network}でシェア`,
 
   footer_author: '作者',
   footer_source: 'ソース',

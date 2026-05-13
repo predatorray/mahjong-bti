@@ -239,7 +239,11 @@ export default function ResultPage() {
           </Button>
         </Stack>
       </Stack>
-      <ShareDialog open={shareOpen} onClose={() => setShareOpen(false)} />
+      <ShareDialog
+        open={shareOpen}
+        onClose={() => setShareOpen(false)}
+        text={t.result_share_text(typeCode, typeInfo.name)}
+      />
       <Footer />
     </Box>
   );

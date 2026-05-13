@@ -38,6 +38,11 @@ const ko: Translations = {
   share_copied: '복사되었습니다!',
   share_close: '닫기',
   share_scan_hint: '또는 QR 코드를 스캔하세요',
+  share_via: '공유',
+  share_native: '공유…',
+  share_default_text:
+    'Mahjong BTI — 12문항으로 알아보는 나의 마작 성격.',
+  share_on: (network: string) => `${network}에 공유`,
 
   footer_author: '제작자',
   footer_source: '소스',

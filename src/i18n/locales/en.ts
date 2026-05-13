@@ -35,6 +35,11 @@ const en = {
   share_copied: 'Copied!',
   share_close: 'Close',
   share_scan_hint: 'Or scan the QR code',
+  share_via: 'Share via',
+  share_native: 'Share…',
+  share_default_text:
+    'Mahjong BTI — discover your Mahjong personality in 12 questions.',
+  share_on: (network: string) => `Share on ${network}`,
 
   footer_author: 'AUTHOR',
   footer_source: 'SOURCE',

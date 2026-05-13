@@ -38,6 +38,11 @@ const es: Translations = {
   share_copied: '¡Copiado!',
   share_close: 'Cerrar',
   share_scan_hint: 'O escanea el código QR',
+  share_via: 'Compartir en',
+  share_native: 'Compartir…',
+  share_default_text:
+    'Mahjong BTI — descubre tu personalidad de Mahjong en 12 preguntas.',
+  share_on: (network: string) => `Compartir en ${network}`,
 
   footer_author: 'AUTOR',
   footer_source: 'CÓDIGO',

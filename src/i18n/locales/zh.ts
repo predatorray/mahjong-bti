@@ -38,6 +38,10 @@ const zh: Translations = {
   share_copied: '已复制！',
   share_close: '关闭',
   share_scan_hint: '或扫描二维码',
+  share_via: '分享到',
+  share_native: '分享…',
+  share_default_text: 'Mahjong BTI — 12 道题，测出你的麻将人格。',
+  share_on: (network: string) => `分享到 ${network}`,
 
   footer_author: '作者',
   footer_source: '源码',

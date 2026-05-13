@@ -15,12 +15,20 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CheckIcon from '@mui/icons-material/Check';
+import ShareIcon from '@mui/icons-material/Share';
+import XIcon from '@mui/icons-material/X';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import TelegramIcon from '@mui/icons-material/Telegram';
+import RedditIcon from '@mui/icons-material/Reddit';
 import QRCode from 'react-qr-code';
 import { useT } from '../i18n/useLangContext';
 
 interface ShareDialogProps {
   open: boolean;
   onClose: () => void;
+  /** Optional message to share alongside the URL (e.g. result text). */
+  text?: string;
 }
 
 function getHomeUrl(): string {
@@ -30,17 +38,68 @@ function getHomeUrl(): string {
   return window.location.origin + window.location.pathname;
 }
 
-export default function ShareDialog({ open, onClose }: ShareDialogProps) {
+interface ShareTarget {
+  name: string;
+  color: string;
+  Icon: React.ComponentType<{ fontSize?: 'small' | 'inherit' | 'medium' | 'large' }>;
+  href: (url: string, text: string) => string;
+}
+
+const TARGETS: ShareTarget[] = [
+  {
+    name: 'X',
+    color: '#000000',
+    Icon: XIcon,
+    href: (url, text) =>
+      `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
+  },
+  {
+    name: 'Facebook',
+    color: '#1877F2',
+    Icon: FacebookIcon,
+    href: (url) =>
+      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+  },
+  {
+    name: 'WhatsApp',
+    color: '#25D366',
+    Icon: WhatsAppIcon,
+    href: (url, text) =>
+      `https://wa.me/?text=${encodeURIComponent(`${text} ${url}`)}`,
+  },
+  {
+    name: 'Telegram',
+    color: '#229ED9',
+    Icon: TelegramIcon,
+    href: (url, text) =>
+      `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`,
+  },
+  {
+    name: 'Reddit',
+    color: '#FF4500',
+    Icon: RedditIcon,
+    href: (url, text) =>
+      `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(text)}`,
+  },
+];
+
+export default function ShareDialog({ open, onClose, text }: ShareDialogProps) {
   const t = useT();
   const [copied, setCopied] = useState(false);
   const [url, setUrl] = useState('');
+  const [canNativeShare, setCanNativeShare] = useState(false);
 
   useEffect(() => {
     if (open) {
       setUrl(getHomeUrl());
       setCopied(false);
+      setCanNativeShare(
+        typeof navigator !== 'undefined' && typeof navigator.share === 'function',
+      );
     }
   }, [open]);
+
+  const shareText = text || t.share_default_text;
 
   async function handleCopy() {
     try {
@@ -56,6 +115,18 @@ export default function ShareDialog({ open, onClose }: ShareDialogProps) {
         input.focus();
         input.select();
       }
+    }
+  }
+
+  async function handleNativeShare() {
+    try {
+      await navigator.share({
+        title: t.app_title,
+        text: shareText,
+        url,
+      });
+    } catch {
+      // User cancelled or share failed — no-op.
     }
   }
 
@@ -110,6 +181,57 @@ export default function ShareDialog({ open, onClose }: ShareDialogProps) {
             data-testid="share-link-field"
             onFocus={(e) => e.target.select()}
           />
+
+          <Box>
+            <Typography
+              variant="caption"
+              sx={{ color: 'text.secondary', display: 'block', mb: 1 }}
+            >
+              {t.share_via}
+            </Typography>
+            <Stack
+              direction="row"
+              spacing={1}
+              sx={{ flexWrap: 'wrap', rowGap: 1 }}
+              data-testid="share-targets"
+            >
+              {TARGETS.map(({ name, color, Icon, href }) => (
+                <Tooltip key={name} title={t.share_on(name)}>
+                  <IconButton
+                    component="a"
+                    href={href(url, shareText)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t.share_on(name)}
+                    data-testid={`share-target-${name.toLowerCase()}`}
+                    sx={{
+                      color: '#fff',
+                      bgcolor: color,
+                      '&:hover': { bgcolor: color, opacity: 0.85 },
+                    }}
+                  >
+                    <Icon fontSize="small" />
+                  </IconButton>
+                </Tooltip>
+              ))}
+              {canNativeShare && (
+                <Tooltip title={t.share_native}>
+                  <IconButton
+                    onClick={handleNativeShare}
+                    aria-label={t.share_native}
+                    data-testid="share-target-native"
+                    sx={{
+                      color: 'text.primary',
+                      border: '1px solid',
+                      borderColor: 'divider',
+                    }}
+                  >
+                    <ShareIcon fontSize="small" />
+                  </IconButton>
+                </Tooltip>
+              )}
+            </Stack>
+          </Box>
 
           <Box
             sx={{
