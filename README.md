@@ -1,6 +1,6 @@
 # Mahjong BTI
 
-**English** · [简体中文](./README.zh-CN.md) · [繁體中文](./README.zh-TW.md) · [日本語](./README.ja.md)
+**English** · [简体中文](./README.zh-CN.md) · [繁體中文](./README.zh-TW.md) · [日本語](./README.ja.md) · [한국어](./README.ko.md)
 
 **Mahjong Behavior Type Indicator** — a 16-personality test for Mahjong players.
 Twelve quick questions reveal which kind of player you are at the table.

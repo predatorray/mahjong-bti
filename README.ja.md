@@ -1,6 +1,6 @@
 # Mahjong BTI
 
-[English](./README.md) · [简体中文](./README.zh-CN.md) · [繁體中文](./README.zh-TW.md) · **日本語**
+[English](./README.md) · [简体中文](./README.zh-CN.md) · [繁體中文](./README.zh-TW.md) · **日本語** · [한국어](./README.ko.md)
 
 **Mahjong Behavior Type Indicator（麻雀行動タイプ指標）** —— 麻雀プレイヤー向けの 16 タイプ性格診断。
 12 問のクイック診断で、卓上でのあなたのプレイヤータイプが分かります。

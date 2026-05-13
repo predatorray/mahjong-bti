@@ -1,6 +1,6 @@
 # Mahjong BTI
 
-[English](./README.md) · **简体中文** · [繁體中文](./README.zh-TW.md) · [日本語](./README.ja.md)
+[English](./README.md) · **简体中文** · [繁體中文](./README.zh-TW.md) · [日本語](./README.ja.md) · [한국어](./README.ko.md)
 
 **麻将行为类型指标（Mahjong Behavior Type Indicator）** —— 面向麻将玩家的 16 型人格测试。
 十二道快问快答，告诉你在牌桌上是哪一种玩家。
