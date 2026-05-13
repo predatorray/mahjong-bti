@@ -7,6 +7,7 @@ import en from './locales/en';
 import zh from './locales/zh';
 import ja from './locales/ja';
 import fr from './locales/fr';
+import es from './locales/es';
 import { getLanguagePreference } from './LocalLanguagePreference';
 
 const TranslationsPerLang: Record<SupportedLanguages, Translations> = {
@@ -14,6 +15,7 @@ const TranslationsPerLang: Record<SupportedLanguages, Translations> = {
   zh,
   ja,
   fr,
+  es,
 };
 
 export function detectDefaultLocale(): SupportedLanguages {
