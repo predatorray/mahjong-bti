@@ -1,6 +1,6 @@
 import en_US from './locales/en';
 
-export const SUPPORTED_LANGUAGES = ['en', 'zh', 'ja', 'fr', 'es'] as const;
+export const SUPPORTED_LANGUAGES = ['en', 'zh', 'ja', 'ko', 'fr', 'es'] as const;
 
 export type SupportedLanguages = typeof SUPPORTED_LANGUAGES[number];
 

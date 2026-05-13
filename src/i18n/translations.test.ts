@@ -1,11 +1,12 @@
 import en from './locales/en';
 import zh from './locales/zh';
 import ja from './locales/ja';
+import ko from './locales/ko';
 import fr from './locales/fr';
 import { ALL_TYPE_CODES } from '../mbti/types';
 import { QUESTIONS } from '../mbti/questions';
 
-const LOCALES = { en, zh, ja, fr };
+const LOCALES = { en, zh, ja, ko, fr };
 
 describe('translations', () => {
   test.each(Object.entries(LOCALES))('all 16 types are translated in %s', (_name, locale) => {
